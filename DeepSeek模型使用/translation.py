@@ -4,9 +4,9 @@ from tqdm import tqdm
 import os
 from concurrent.futures import ThreadPoolExecutor, as_completed
 
-os.environ["CUDA_VISIBLE_DEVICES"] = "2,3,5"
-tokenizer = AutoTokenizer.from_pretrained('ds321-32b')
-model = AutoModelForCausalLM.from_pretrained('ds321-32b', device_map="auto")
+os.environ["CUDA_VISIBLE_DEVICES"] = "2,3,5"#模型使用指定GPU
+tokenizer = AutoTokenizer.from_pretrained('deepseek_model_15B')
+model = AutoModelForCausalLM.from_pretrained('deepseek_model_15B', device_map="auto")
 generator = pipeline("text-generation", model=model, tokenizer=tokenizer, num_workers=4, device_map="auto")
 
 
