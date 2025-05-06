@@ -1,0 +1,1 @@
+all-MiniLM-L6-v2 中文词嵌入模型 https://huggingface.co/sentence-transformers/all-MiniLM-L6-v2/tree/main
