@@ -8,8 +8,8 @@ from concurrent.futures import ThreadPoolExecutor
 os.environ["CUDA_VISIBLE_DEVICES"] = "2,3,5"
 
 # 加载模型
-tokenizer = AutoTokenizer.from_pretrained('ds321-32b')
-model = AutoModelForCausalLM.from_pretrained('ds321-32b', device_map="auto")
+tokenizer = AutoTokenizer.from_pretrained('deepseek_model_15B')
+model = AutoModelForCausalLM.from_pretrained('deepseek_model_15B', device_map="auto")
 generator = pipeline("text-generation", model=model, tokenizer=tokenizer, num_workers=4, device_map="auto")
 
 # 创建 Flask 应用
